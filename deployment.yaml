@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tribute-deployment
+spec:
+  replicas: 6  # Number of desired replicas
+  selector:
+    matchLabels:
+      app: tribute
+  template:
+    metadata:
+      labels:
+        app: tribute
+    spec:
+      containers:
+      - name: tribute
+        image: yash5090/tribute:latest
+        ports:
+        - containerPort: 3000
