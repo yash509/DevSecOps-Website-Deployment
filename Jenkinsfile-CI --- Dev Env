@@ -106,13 +106,13 @@ pipeline {
             }
         }
         
-        // stage('Install Dependencies') {
-        //     steps {
-        //         //dir('Band Website') {
-        //             sh "npm install"
-        //         //}
-        //     }
-        // }
+        stage('Install Dependencies') {
+             steps {
+                 dir('Band Website') {
+                     sh "npm install"
+                 }
+             }
+        }
         
         stage('OWASP File System SCAN') {
             steps {
